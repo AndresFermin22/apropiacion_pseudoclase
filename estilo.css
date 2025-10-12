@@ -1,0 +1,25 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+/*colocar hover en boton*/
+button:hover {
+  background-color: black;
+  color: aliceblue;
+}
+
+.mensaje {
+  display: block;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+}
+
+#oculto:target {
+  opacity:0;
+  transition: 0,5s;
+
+}
+
+
