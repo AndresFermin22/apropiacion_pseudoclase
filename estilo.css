@@ -1,14 +1,17 @@
 *{
   margin: 0;
   padding: 0;
+  background-color: blue;
 }
 
 /*colocar hover en boton*/
 button:hover {
   background-color: black;
   color: aliceblue;
+  display: inline-block;
 }
 
+/*colocar :target para mostrar un mensaje oculto*/
 .mensaje {
   display: block;
   margin-top: 20px;
@@ -19,7 +22,14 @@ button:hover {
 #oculto:target {
   opacity:0;
   transition: 0,5s;
-
 }
+
+.contenedor:first-child {
+  display: inline-block;
+  color: blue;
+  
+}
+
+
 
 
