@@ -1,14 +1,24 @@
 *{
   margin: 0;
   padding: 0;
-  background-color: blue;
+}
+
+/*Usar :root para definir una variable de color y aplicar*/
+:root {
+  background: #d95f94;
+background: radial-gradient(circle, rgba(217, 95, 148, 1) 0%,
+ rgba(80, 156, 242, 1) 100%);
 }
 
 /*colocar hover en boton*/
 button:hover {
   background-color: black;
-  color: aliceblue;
   display: inline-block;
+
+}
+
+button {
+  margin-top: 8px;
 }
 
 /*colocar :target para mostrar un mensaje oculto*/
@@ -24,12 +34,58 @@ button:hover {
   transition: 0,5s;
 }
 
-.contenedor:first-child {
+/*Dar un estilo especial al primer hijo :first-child*/
+div li:first-child {
   display: inline-block;
-  color: blue;
+  color: #fff;
+  background-color: blue;
   
 }
 
+.formulario {
+  margin-top: 10px;
+  padding: 10px 10px;
+  border:  2px red solid;
+  border-radius: 10px;
+  
+
+}
+
+/*formularios no validos con:invalid*/
+input {
+  display: block;
+  border-radius: 5px;
+}
+
+input:invalid {
+  border: rgb(190, 11, 11) solid;
+}
+
+input:valid {
+  border: rgb(8, 104, 16) solid;
+}
+
+/*Resaltar campo :type*/
+input[type="email"] {
+  background-color: rgb(176, 176, 231);
+  color: #fff;
+}
+
+/*formulario donde el campo activo cambie de borde con :focus*/
+.formulario input:focus {
+  outline: none;
+  border: 2px rgb(7, 229, 236) solid;
 
 
+}
+/*estilizar elementos unicos de su tipo con :first-of-type*/
+form :only-of-type {
+  color: rgb(247, 5, 5);
+  border-radius: 4px;
+  padding: 3px 3px;
+}
 
+/*aplicar estilo solo al primer parrafo de una seccion :first-of-type*/
+label:first-of-type {
+  color: blueviolet;
+}
