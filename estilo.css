@@ -1,6 +1,8 @@
 *{
   margin: 0;
-  padding: 0;
+  padding: 2pxpx;
+  font-size: 10px;
+  list-style-type:none;
 }
 
 /*Usar :root para definir una variable de color y aplicar*/
@@ -10,14 +12,20 @@ background: radial-gradient(circle, rgba(217, 95, 148, 1) 0%,
  rgba(80, 156, 242, 1) 100%);
 }
 
+div {
+  padding: 5px 5px;
+  margin: 15px 15px;
+}
+
 /*colocar hover en boton*/
-button:hover {
+.enviar:hover {
   background-color: black;
   display: inline-block;
+  color: #fff;
 
 }
 
-button {
+.enviar {
   margin-top: 8px;
 }
 
@@ -26,6 +34,7 @@ button {
   display: block;
   margin-top: 20px;
   margin-bottom: 20px;
+  padding: 10px ;
 
 }
 
@@ -48,7 +57,6 @@ div li:first-child {
   border:  2px red solid;
   border-radius: 10px;
   
-
 }
 
 /*formularios no validos con:invalid*/
@@ -89,3 +97,27 @@ form :only-of-type {
 label:first-of-type {
   color: blueviolet;
 }
+
+/*etiquetas semanticas que cambie su color al pasar sobre cada link.*/
+nav a:hover {
+  color: aqua;
+
+ 
+}
+
+h1::before {
+  content: icon "{<i class="bx bx-signal-5" />" ;
+  display: block;
+  color: black;
+}
+
+/*linea decorativa despues de cada parrafo en este caso lista ::after*/
+li::after {
+  content: "";
+  display: inline-block;
+  width: 10%;                 
+  height: 2px;               
+  background: linear-gradient(90deg, #f7006b, #05448d);   
+  margin-left: 10px;
+}
+

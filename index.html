@@ -4,11 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="estilo.css">
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <title>apropiacion</title>
 </head>
 <body>
+<header>
+  <nav>
+    <ul>
+      <li><a href="#">Inicio</a></li>
+      <li><a href="#">Acerca</a></li>
+      <li><a href="#">Servicios</a></li>
+      <li><a href="#">Blog</a></li>
+      <li><a href="#">Contacto</a></li>
+    </ul>
+  </nav>
+</header>
+
+
   <div class="Contenedor">
-    <h1>Contenedor</h1>
+    <h1>Listas</h1>
     <ul>
       <li>Lista 1</li>
       <li>Lista 3</li>
@@ -24,6 +38,7 @@
   
   <div class="formulario" >
       <form >
+        <h1>Formulario de Contacto</h1>
       <label for="nombre">Nombres</label>
       <input type="text" id="nombre"  placeholder="Escriba su nombre..." required >
       <label for="apellido">Apellido</label>
@@ -32,9 +47,10 @@
       <input type="text" id="genero" placeholder="Escriba su genero..." required > 
       <label for="correo">Corre electronico</label>
       <input type="email" id="correo" placeholder="Escriba su Correo..." required >
-    <button>
+    <button class="enviar">
       Enviar  
     </button>
+    <button class="sombra" onclick="location.reload()">Recargar</button>
     </form>
   </div>
 
