@@ -3,14 +3,21 @@
   padding: 2px;
   font-size: 10px;
   list-style-type:none;
-  color: #fff;
 }
 
 /*9. Usar :root para definir una variable de color y aplicar*/
-:root {
+/*21.Define una variable global para color primario y aplícala a varios elementos*/
+:root,a {
   background: #d95f94;
 background: radial-gradient(circle, rgb(80, 9, 40) 0%,
  rgb(35, 99, 172) 100%);
+ color: #fff;
+ --color-dark: rgb(34, 32, 32, 0.9) ;
+ 
+  --color-fondo: #212c6b;
+  --color-texto: #ffffff;
+  --color-boton: #50061f;
+
 }
 
 div {
@@ -181,14 +188,36 @@ li::after {
 }
 
 /*15.Diseña un input que tenga un ícono dentro usando ::before.*/
+.telefono {
+  position: relative;
+  width: 200px;
+}
+.telefono::before {
+  content: "♦";
+  position: absolute;
+  left: 15px;
+  top: 3px;
+  font-size:  18px;
+  color: #b9b8e0;
+}
+
+.telefono input {
+  width: 100%;
+  padding: 1px 20px;
+  border:  1px solid red;
+  font-size:  13px;
+  color: rgb(0, 0, 0);
+}
+
 
 /*16.Coloca una imagen de forma relative y mueve su posición sin alterar el flujo.*/
 .caotico {
   position: relative;  
   top: 5px;          
   left: 10px;         
-  width: 300px;        
+  width: 200px;        
   border-radius: 5px; 
+
 }
 
 /*17.Crea una tarjeta que contenga un botón de eliminar con absolute*/
@@ -222,17 +251,19 @@ li::after {
 /*18.Haz una barra de navegación fija en la parte superior (fixed)*/
 .navegacion  {
   position: fixed;
+  list-style: none;
   top: 0;
   left: 0;
   width: 100%;
   background-color: #880a40;
   color: white;
   padding: 12px 10px;
+  z-index: 1;
 
 }
 
 a {
-  font-size: 25px;
+  font-size: 20px;
   padding: px;
 }
 
@@ -275,29 +306,81 @@ debe tener un color de fondo diferente.*/
 
 
 /*20. Diseña una card que se centre usando position y transform*/
-.card-centrada {
-  position: fixed;              /* se mantiene centrada aunque hagas scroll */
-  top: 50%;                     /* la mueve a la mitad del eje vertical */
-  left: 50%;                    /* la mueve a la mitad del eje horizontal */
-  transform: translate(-50%, -50%); /* la centra exactamente */
-  background-color: rgba(255, 255, 255, 0.1);
-  padding: 20px;
-  width: 250px;
+.card {
+  position: relative;  
+  margin-top: 100px;
+  left: 20%;                               
+  transform: translate(-50%, -50%); 
+  background-color: rgba(70, 4, 4, 0.1);
+  padding: 10px;
+  width: 200px;
   text-align: center;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 10px;;
+  border: 2px solid rgba(240, 234, 234, 0.2);
 }
 
-.card-centrada h2 {
-  margin-bottom: 10px;
-  font-size: 18px;
+.card h2 {
+  margin-bottom: 7px;
+  font-size: 15px;
   color: #fff;
 }
 
-.card-centrada p {
+.card {
   font-size: 12px;
   color: #e0e0e0;
   margin-bottom: 12px;
+}
+
+/*22.Crea un tema oscuro cambiando variables en :root*/
+.card-dark {
+    position: relative;
+    left: 20%;
+    transform: translateX(-50%);
+    width: 150px;
+    padding: 10px;
+    background-color: var(--color-dark);
+    border-radius: 8px;
+    margin-top: 10px;
+    color: rgb(190, 188, 188);
+}
+
+
+/* 23. Usa una variable con valor fallback si no existe otra definida */
+.card-fallback {
+  position: relative;
+  left: 20%;
+  transform: translateX(-50%);
+  width: 150px;
+  padding: 10px;
+  border-radius: 8px;
+
+  background-color: var(--color-fondo1, #118cb1);
+
+  color: var(--color-texto, #fff);
+
+  text-align: center;
+  margin-top: 15px;
+}
+
+/* 24.Define variables dentro de un scope local dentro de .card*/
+.card-scope {
+
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  width: 200px;
+  margin: 20px auto;
+  padding: 16px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.card-scope button {
+  background-color: var(--color-boton);
+  color: var(--color-texto);
+  border: none;
+  border-radius: 6px;
+  padding: 8px 12px;
+  cursor: pointer;
+  margin-top: 8px;
 }
 
